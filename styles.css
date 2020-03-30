@@ -1,0 +1,80 @@
+/* Global Variables */
+:root{
+  --clr-primary: rgb(158, 174, 238);
+  --clr-secondary: rgb(240, 234, 234);
+  --clr-medium: rgb(79, 98, 114);
+  --clr-dark: rgb(64, 78, 92);
+}
+
+/* Utility */
+.bg-primary{background-color: var(--clr-primary);}
+.bg-secondary{background-color: var(--clr-secondary);}
+.txt-primary{color: var(--clr-secondary);}
+.txt-secondary{color: var(--clr-medium);}
+
+/* Reset */
+*{
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling */
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+  flex-direction:column;
+  width:270px;
+}
+
+.rowSpacing {
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rowSpacing button {
+  border-radius: 5px;
+}
+
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9,1fr);
+  margin: 0 auto;
+  width:270px;
+  height:270px;
+  background-color:rgba(0,0,0,.03);
+}
+
+.cell {
+  width:30px;
+  height:30px;
+  font:1.2em helvetica;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+.cell:nth-child(-n+9),.cell:nth-child(n+28):nth-child(-n+36),.cell:nth-child(n+55):nth-child(-n+63){
+  border-top:1px solid black;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),.cell:nth-child(n+46):nth-child(-n+54),.cell:nth-child(n+73):nth-child(-n+81) { 
+  border-bottom:1px solid black;
+}
+
+.cell:nth-child(3n) { 
+  border-right:1px solid black;
+}
+.cell:nth-child(3n-2) { 
+  border-left:1px solid black;
+}
+
+.cell:hover{
+  border: 3px solid green !important;
+}
